@@ -252,7 +252,6 @@ variable "storage_type" {
   description = "Storage type for non-aurora database engines (gp2|iops)"
   default     = ""
 }
-
 variable "iops" {
   type        = string
   description = "The amount of provisioned IOPS, if `storage_type` is `iops`"
