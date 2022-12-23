@@ -11,8 +11,8 @@
 
 | Name | Version |
 |------|---------|
-| <a name="provider_aws"></a> [aws](#provider\_aws) | 3.52.0 |
-| <a name="provider_random"></a> [random](#provider\_random) | 3.1.0 |
+| <a name="provider_aws"></a> [aws](#provider\_aws) | 4.48.0 |
+| <a name="provider_random"></a> [random](#provider\_random) | 3.4.3 |
 
 ## Modules
 
@@ -60,6 +60,7 @@ No modules.
 | <a name="input_iops"></a> [iops](#input\_iops) | The amount of provisioned IOPS, if `storage_type` is `iops` | `string` | `""` | no |
 | <a name="input_is_multi_az"></a> [is\_multi\_az](#input\_is\_multi\_az) | Whether RDS will be deployed into Multi-AZ or not | `bool` | `true` | no |
 | <a name="input_kms_key_arn"></a> [kms\_key\_arn](#input\_kms\_key\_arn) | RDS Encryption key | `string` | n/a | yes |
+| <a name="input_max_allocated_storage"></a> [max\_allocated\_storage](#input\_max\_allocated\_storage) | Set it to higher than storage to enable autoscaling | `number` | `null` | no |
 | <a name="input_monitoring_interval"></a> [monitoring\_interval](#input\_monitoring\_interval) | The interval (seconds) between points when Enhanced Monitoring metrics are collected. | `string` | `"5"` | no |
 | <a name="input_performance_insights_enabled"></a> [performance\_insights\_enabled](#input\_performance\_insights\_enabled) | Specifies whether Performance Insights is enabled or not. | `bool` | `false` | no |
 | <a name="input_port"></a> [port](#input\_port) | Database port. | `string` | `""` | no |

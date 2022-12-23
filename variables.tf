@@ -229,6 +229,11 @@ variable "is_multi_az" {
   default     = true
 }
 
+variable "max_allocated_storage" {
+  type        = number
+  description = "Set it to higher than storage to enable autoscaling"
+  default     = null
+}
 
 locals {
   common_tags = {

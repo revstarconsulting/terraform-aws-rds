@@ -87,6 +87,7 @@ resource "aws_db_instance" "default" {
   password                     = jsondecode(aws_secretsmanager_secret_version.sm_ver.secret_string)["password"]
   port                         = local.port
   allocated_storage            = var.storage == "" ? var.storage_type == "iops" ? "100" : "50" : var.storage
+  max_allocated_storage        = local.engine == "sqlserver-se" || local.engine == "sqlserver-ee" ? var.max_allocated_storage == null ? 0 : var.max_allocated_storage : null
   publicly_accessible          = false
   parameter_group_name         = aws_db_parameter_group.default.id
   db_subnet_group_name         = aws_db_subnet_group.default.name
