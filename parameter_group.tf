@@ -27,7 +27,7 @@ resource "aws_rds_cluster_parameter_group" "default" {
     content {
       name         = parameter.value["name"]
       value        = parameter.value["value"]
-      apply_method = lookup(parameter.value, "apply_method", "immediate")
+      apply_method = lookup(parameter.value, "apply_method", "pending-reboot")
     }
   }
   tags = local.common_tags
