@@ -290,3 +290,9 @@ locals {
 
 }
 
+
+variable "auto_minor_version_upgrade" {
+  type        = bool
+  default     = true
+  description = "Determines whether minor engine upgrades will be applied automatically to the DB instance during the maintenance window."
+}

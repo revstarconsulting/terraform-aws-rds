@@ -70,7 +70,7 @@ resource "aws_rds_cluster_instance" "default" {
   apply_immediately            = var.apply_immediately
   monitoring_interval          = var.monitoring_interval != null ? var.monitoring_interval : 0
   monitoring_role_arn          = var.monitoring_interval > 0 ? concat(aws_iam_role.rds_enhanced_monitoring.*.arn, [""])[0] : null
-  auto_minor_version_upgrade   = false
+  auto_minor_version_upgrade   = var.auto_minor_version_upgrade
   performance_insights_enabled = var.performance_insights_enabled
 
   depends_on = [
@@ -87,7 +87,7 @@ resource "aws_db_instance" "default" {
   db_name                    = local.engine == "sqlserver-se" || local.engine == "sqlserver-ex" ? null : var.database_name
   engine                     = local.engine
   engine_version             = local.engine_version
-  auto_minor_version_upgrade = false
+  auto_minor_version_upgrade = var.auto_minor_version_upgrade
   instance_class             = var.instance_type
   identifier                 = local.identifier
   vpc_security_group_ids     = [aws_security_group.rds.id]
